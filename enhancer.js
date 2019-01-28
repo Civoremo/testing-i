@@ -6,7 +6,9 @@ module.exports = {
 };
 
 function success(item) {
-    if (item.enhancement >= 0) {
+    if (item.enhancement === 20) {
+        throw new Error("Item at maximum enhancement");
+    } else if (item.enhancement >= 0) {
         if (
             (item.enhancement <= 5 && item.type === "armor") ||
             (item.enhancement <= 7 && item.type === "weapon")
@@ -53,7 +55,13 @@ function fail(item) {
     if (item.enhancement > 0 && item.enhancement < 14) {
         item.enhancement -= 5;
     }
-    if (item.enhancement > 14) {
+    if (item.enhancement > 14 && item.enhancement < 17) {
+        item.enhancement -= 10;
+    }
+    if (item.enhancement >= 17 && item.enhancement < 20) {
+        item.enhancement -= 1;
+    }
+    if (item.enhancement === 20) {
         item.enhancement -= 10;
     }
     switch (item.enhancement) {

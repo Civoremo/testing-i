@@ -33,12 +33,34 @@ describe("SUCCESS", () => {
         enhancement: 16,
     };
 
+    const itemLvl20 = {
+        originalName: "Shiny Boots",
+        name: "[PEN] Shiny Boots",
+        type: "armor",
+        durability: 80,
+        enhancement: 20,
+    };
+
+    const itemEnhLvl20 = {
+        originalName: "Shiny Boots",
+        name: "[PEN] Shiny Boots",
+        type: "armor",
+        durability: 80,
+        enhancement: 16,
+    };
+
     test("success weapon", () => {
         expect(enhancer.success(weapon)).toEqual(weaponEnh);
     });
 
     test("success armor", () => {
         expect(enhancer.success(armor)).toEqual(armorEnh);
+    });
+
+    test("success enhancement at 20 already", () => {
+        expect(() => {
+            enhancer.success(itemLvl20);
+        }).toThrow();
     });
 });
 
@@ -69,14 +91,18 @@ describe("FAIL", () => {
 
     const armorEnh = {
         originalName: "Shiny Boots",
-        name: "[PRI] Shiny Boots",
+        name: "[+5] Shiny Boots",
         type: "armor",
         durability: 80,
-        enhancement: 16,
+        enhancement: 5,
     };
 
     test("failed enhancement", () => {
         expect(enhancer.fail(weapon)).toEqual(weaponEnh);
+    });
+
+    test("failed enhancement", () => {
+        expect(enhancer.fail(armor)).toEqual(armorEnh);
     });
 });
 
