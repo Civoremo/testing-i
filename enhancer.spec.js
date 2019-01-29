@@ -97,12 +97,40 @@ describe("FAIL", () => {
         enhancement: 5,
     };
 
+    const armorLvl13Durability20 = {
+        originalName: "Shiny Boots",
+        name: "[+15] Shiny Boots",
+        type: "armor",
+        durability: 20,
+        enhancement: 13,
+    };
+
+    const armorLvl17Durability5 = {
+        originalName: "Shiny Boots",
+        name: "[+15] Shiny Boots",
+        type: "armor",
+        durability: 5,
+        enhancement: 17,
+    };
+
     test("failed enhancement", () => {
         expect(enhancer.fail(weapon)).toEqual(weaponEnh);
     });
 
     test("failed enhancement", () => {
         expect(enhancer.fail(armor)).toEqual(armorEnh);
+    });
+
+    test("failed enhancement", () => {
+        expect(() => {
+            enhancer.fail(armorLvl13Durability20);
+        }).toThrow();
+    });
+
+    test("failed enhancement", () => {
+        expect(() => {
+            enhancer.fail(armorLvl17Durability5);
+        }).toThrow();
     });
 });
 

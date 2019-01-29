@@ -52,6 +52,22 @@ function success(item) {
 }
 
 function fail(item) {
+    if (item.enhancement <= 14 && item.durability < 25) {
+        console.log("item durability to low at enhancement 14 and below");
+        throw new Error(
+            `Item is at level ${item.enhancement} and durability is at ${
+                item.durability
+            }`
+        );
+    }
+    if (item.enhancement >= 15 && item.durability < 10) {
+        console.log("item durability to low at enhancement 15 and above");
+        throw new Error(
+            `Item is at level ${item.enhancement} and durability is at ${
+                item.durability
+            }`
+        );
+    }
     if (item.enhancement > 0 && item.enhancement < 14) {
         item.enhancement -= 5;
     }
@@ -89,7 +105,7 @@ function fail(item) {
                 item.name = `${item.originalName}`;
             }
     }
-    console.log(item);
+    // console.log(item);
     return item;
 }
 
