@@ -6,7 +6,8 @@ module.exports = {
 };
 
 function success(item) {
-    if (item.enhancement === 20) {
+    if (item.enhancement >= 20) {
+        console.log("item already at maximum");
         throw new Error("Item at maximum enhancement");
     } else if (item.enhancement >= 0) {
         if (

@@ -46,7 +46,7 @@ describe("SUCCESS", () => {
         name: "[PEN] Shiny Boots",
         type: "armor",
         durability: 80,
-        enhancement: 16,
+        enhancement: 20,
     };
 
     test("success weapon", () => {
