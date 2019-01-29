@@ -113,7 +113,3 @@ function repair(item) {
     item.durability = 100;
     return item;
 }
-
-// function enhance(item) {
-//     return item;
-// }

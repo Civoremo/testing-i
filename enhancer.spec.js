@@ -134,43 +134,43 @@ describe("FAIL", () => {
     });
 });
 
-// describe("REPAIR", () => {
-//     const weapon = {
-//         originalName: "Flawless Sword",
-//         name: "Flawless Sword",
-//         type: "weapon",
-//         durability: 90,
-//         enhancement: 0,
-//     };
+describe("REPAIR", () => {
+    const weapon = {
+        originalName: "Flawless Sword",
+        name: "Flawless Sword",
+        type: "weapon",
+        durability: 90,
+        enhancement: 0,
+    };
 
-//     const weaponEnh = {
-//         originalName: "Flawless Sword",
-//         name: "Flawless Sword",
-//         type: "weapon",
-//         durability: 100,
-//         enhancement: 0,
-//     };
+    const weaponEnh = {
+        originalName: "Flawless Sword",
+        name: "Flawless Sword",
+        type: "weapon",
+        durability: 100,
+        enhancement: 0,
+    };
 
-//     const armor = {
-//         originalName: "Shiny Boots",
-//         name: "Shiny Boots",
-//         type: "armor",
-//         durability: 80,
-//         enhancement: 0,
-//     };
+    const armor = {
+        originalName: "Shiny Boots",
+        name: "Shiny Boots",
+        type: "armor",
+        durability: 80,
+        enhancement: 0,
+    };
 
-//     const armorEnh = {
-//         originalName: "Shiny Boots",
-//         name: "Shiny Boots",
-//         type: "armor",
-//         durability: 100,
-//         enhancement: 0,
-//     };
+    const armorEnh = {
+        originalName: "Shiny Boots",
+        name: "Shiny Boots",
+        type: "armor",
+        durability: 100,
+        enhancement: 0,
+    };
 
-//     test("repair weapon", () => {
-//         expect(enhancer.repair(weapon)).toEqual(weaponEnh);
-//     });
-//     test("repair armor", () => {
-//         expect(enhancer.repair(armor)).toEqual(armorEnh);
-//     });
-// });
+    test("repair weapon", () => {
+        expect(enhancer.repair(weapon)).toEqual(weaponEnh);
+    });
+    test("repair armor", () => {
+        expect(enhancer.repair(armor)).toEqual(armorEnh);
+    });
+});
